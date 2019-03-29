@@ -15,7 +15,6 @@
 get_header(); ?>
 <!-- slideshow -->
 <?php get_template_part('template-parts/home/slideshow'); ?>
-<?php get_template_part('template-parts/home/section');?>
 <?php get_template_part('template-parts/home/gallery');?>
 <?php get_template_part('template-parts/home/allvendors');?>
 <?php get_template_part('template-parts/home/services');?>

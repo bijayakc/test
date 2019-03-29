@@ -1,81 +1,42 @@
-<div class="top-heading">
+<?php 
+include("section.php");?>
+
+ <div class="top-heading">
             <img src="<?php echo esc_url(get_template_directory_uri('/'));?>/assets/images/flower.png" width="100">
             <h3 class="gallery--heading2 text-center">Gallery</h3>
             <img src="<?php echo esc_url(get_template_directory_uri('/'));?>/assets/images/flower.png" width="100" style="transform: scaleX(-1);">
         </div>
         <div class="row gallery--all">
-
-                            <?php
-            $args = array(
-                'posts_per_page' => 5,
-                'post_status' => 'publish',
-                'cat' => 4,
-
-                );
-            // Get all the available thumbnail sizes
-    $sizes = get_intermediate_image_sizes();
-    echo $sizes;
-    $images = array();
-
-            $the_query = new WP_Query($args);
-            if($the_query->have_posts()):
-            ?>
-                <?php
-                while($the_query->have_posts()):
-                    $post = $the_query->the_post();
-                    // $id = get_the_ID();
-            // $images = get_field('image');
-            // echo $images;
-                    // $format = get_post_format();
-                    // $featured_img_id = get_post_meta($id,'_thumbnail_id',1);
-                    // $attachment = wp_get_attachment_image_src($featured_img_id,'small',true);
-                    foreach ( $sizes as $key => $size ) {
-
-                        $thumbnails[$key] = wp_get_attachment_image_src( get_the_ID(), $size)[0];
-                    }
-
-                    $images = array_merge( $thumbnails , $images );
-        ?>
-                          <?php
-            endwhile;
-        ?>
-        <?php
-            endif;
-    ?>
             <div class="col-sm-4 flex-activities">
-
-                <?php
-                foreach(array_slice($images, 0, 2) as $value):
-                    echo $value;
-                ?>
                 <div class="first-col">
-                    <img src="<?php echo $value; ?>"
-                         class="img-gallery">
+                    <a href="<?php echo site_url();?>/gallery"><img src="https://media-api.xogrp.com/images/6ad2a633-1260-4246-8c5c-301296215164~rs_768.h"
+                         class="img-gallery"></a>
 
                 </div>
-                <?php
-                endforeach;
-                ?>
-                <!-- <div class="first-col1">
-                    <img src="<?php echo $attachment[1]; ?>"
-                         class="img-gallery">
+                <div class="first-col1">
+                    <a href="<?php echo site_url();?>/gallery"><img src="http://www.bridebox.com/blog/wp-content/uploads/2015/05/wedding-catering.jpg"
+                         class="img-gallery"></a>
                     
                 </div>
+            </div>
+            <div class="col-sm-4 flex-activities">
                 <div class="second-col">
-                    <img src="<?php echo $attachment[2]; ?>"
-                         class="img-gallery1">
+                    <a href="<?php echo site_url();?>/gallery"><img src="https://image.freepik.com/free-vector/wedding-card-invitation-with-flowers_23-2147769604.jpg"
+                         class="img-gallery1"></a>
                     
                 </div>
+            </div>
+            <div class="col-sm-4 flex-activities">
                 <div class="third-col">
-                    <img src="<?php echo $attachment[3]; ?>" class="img-gallery">
-                    
+                    <a href="<?php echo site_url();?>/gallery"><img src="https://www.stanseatonphotography.co.uk/images/pages/sections/10.jpg" class="img-gallery">
+                    </a>
                 </div>
                 <div class="third-col1">
-                    <img src="<?php echo $attachment[4]; ?>"
-                         class="img-gallery">
+                    <a href="<?php echo site_url();?>/gallery"><img src="https://lqp-p-imgs.s3-ap-south-1.amazonaws.com/faceview/j1g/fb/c1d/a1f/affimgs/az-large-5235196.jpg"
+                         class="img-gallery"></a>
                     
-                </div> -->
+                </div>
             </div>
         </div>
-         </div>
     </div>
+</div>
